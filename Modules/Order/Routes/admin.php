@@ -20,6 +20,7 @@ Route::get('orders/index/table', [
     'middleware' => 'can:admin.orders.index',
 ]);
 
+
 Route::put('orders/{order}/status', [
     'as' => 'admin.orders.status.update',
     'uses' => 'OrderStatusController@update',

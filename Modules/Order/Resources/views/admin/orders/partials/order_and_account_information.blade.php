@@ -59,10 +59,8 @@
                                                     <button type="button" class="close" data-dismiss="modal">
                                                         <i class="fa fa-times" aria-hidden="true"></i>
                                                     </button>
-
-                                                    <h4 class="modal-title">{{ trans('admin::admin.delete.confirmation') }}</h4>
+                                                    <h4 class="modal-title">{{ __('Update Status') }}</h4>
                                                 </div>
-
                                                 <div class="modal-body">
                                                     <p>{{ __('Are you sure you want to update the order status?') }}</p>
                                                 </div>

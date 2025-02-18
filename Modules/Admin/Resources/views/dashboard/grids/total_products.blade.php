@@ -6,6 +6,6 @@
         <span class="title">Monthly Sales</span>
 
         <!-- Display the total monthly sales amount -->
-        <span class="count">${{ number_format($monthlySales, 2) }}</span>
+        <a href="{{ route('admin.orders.index', ['filter_date' => 'monthly']) }}"><span class="count">${{ number_format($monthlySales, 2) }} →</span></a>
     </div>
 </div>

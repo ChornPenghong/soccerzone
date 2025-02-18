@@ -6,6 +6,7 @@
         <span class="title">Weekly Sales</span>
 
         <!-- Display the total weekly sales -->
-        <span class="count">${{ number_format($weeklySales, 2) }}</span>
+        <a href="{{ route('admin.orders.index', ['filter_date' => 'weekly']) }}"> <span class="count">${{ number_format($weeklySales, 2) }} →</span></a>
+
     </div>
 </div>

@@ -5,6 +5,6 @@
         <span class="title">Today Sales</span>
 
 
-        <span class="count">${{number_format($todaySales, 2)}}</span>
+        <a href="{{ route('admin.orders.index', ['filter_date' => 'today']) }}"><span class="count">${{number_format($todaySales, 2)}} →</span></a>
     </div>
 </div>

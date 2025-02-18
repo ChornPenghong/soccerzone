@@ -26,16 +26,16 @@
 
     <script>
         $(document).ready(() => {
-            let selectedStatus = null; // Store previous status
-            let selectedOrderId = null; // Store order ID
+            let selectedStatus = null;
+            let selectedOrderId = null;
 
             $('#order-status').focus(function () {
-                selectedStatus = $(this).val(); // Store current value before change
+                selectedStatus = $(this).val();
             });
 
             $('#order-status').change(function (e) {
                 selectedOrderId = e.currentTarget.dataset.id;
-                $('#confirm-status-modal').modal('show'); // Show the confirmation modal
+                $('#confirm-status-modal').modal('show');
             });
 
             $('#confirm-update').click(() => {

@@ -29,7 +29,7 @@ class DashboardController
         $endOfMonth = Carbon::now()->endOfMonth();
         $startOfYear = Carbon::now()->startOfYear();
         $endOfYear = Carbon::now()->endOfYear();
-        $todaySales = Order::whereDate('created_at', today())->sum('total');
+        $todaySales = Order::whereStatus('completed')->whereDate('created_at', today())->sum('total');
         // Fetch the status from the request
         $status = $request->get('status');
 
@@ -44,12 +44,12 @@ class DashboardController
         // Get the latest 5 orders (filtered if a status is selected)
         $latestOrders = $query->take(5)->get();
         // Sum the 'total' column for all orders created this week
-    $weeklySales = Order::whereBetween('created_at', [$startOfWeek, $endOfWeek])
-    ->sum('total');
-    $monthlySales = Order::whereBetween('created_at', [$startOfMonth, $endOfMonth])
-                        ->sum('total'); 
-    $yearlySales = Order::whereBetween('created_at', [$startOfYear, $endOfYear])
-                        ->sum('total'); 
+        $weeklySales = Order::whereStatus('completed')->whereBetween('created_at', [$startOfWeek, $endOfWeek])
+        ->sum('total');
+        $monthlySales = Order::whereStatus('completed')->whereBetween('created_at', [$startOfMonth, $endOfMonth])
+                            ->sum('total');
+        $yearlySales = Order::whereStatus('completed')->whereBetween('created_at', [$startOfYear, $endOfYear])
+                        ->sum('total');
         return view('admin::dashboard.index', [
             'todaySales' => $todaySales,
             'weeklySales' => $weeklySales,
@@ -104,7 +104,7 @@ class DashboardController
             ->limit(5)
             ->get();
     }
-    
+
     public function latestOrder() {
         $latestOrders = Order::when(request('status'), function ($q) {
                 $q->where('status', request('status'));
