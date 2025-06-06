@@ -9,11 +9,11 @@
 ### 👤 User Side
 - Browse products by category, team, or type
 - Shopping cart & secure checkout
-- Register, login, and manage profile
+- Register, log in, and manage profile
 - View past orders and tracking
 
 ### 🛠️ Admin Panel
-- Manage products, categories, orders, and customers
+- Manage products, categories, orders, Voucher and customers
 - Upload product images with inventory tracking
 - Dashboard with sales statistics
 - Role-based access control (Admin, Staff)
@@ -22,11 +22,11 @@
 
 ## 🧰 Tech Stack
 
-- **Framework:** Laravel 10+
-- **Database:** MySQL / PostgreSQL / SQLite
+- **Framework:** Laravel 11
+- **Database:** MySQL
 - **Frontend:** Blade + Tailwind CSS (or optional Vue.js integration)
-- **Authentication:** Laravel Breeze / Sanctum / Fortify / Passport (your choice)
-- **Admin Panel:** Laravel Nova / Filament / Custom Dashboard
+- **Authentication:** Laravel Sanctum
+- **Package:** Laravel Module 
 
 ---
 
